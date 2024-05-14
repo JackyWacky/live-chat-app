@@ -1,13 +1,20 @@
-import { WebSocketServer } from "ws";
+import WebSocket, { WebSocketServer } from 'ws';
 
-const wss = new WebSocketServer({ port: 9090 });
+var port = 9090;
 
-wss.on("connection", function connection(ws) {
-  ws.on("error", console.error);
+var wss = new WebSocketServer({ port });
 
-  ws.on("message", function message(data) {
-    //var message = JSON.parse(data);
-    console.log("received: %s", data);
-    ws.send(data);
+wss.on('connection', function connection(ws) {
+  ws.on('error', console.error);
+
+  ws.on('message', function message(data) {
+    var message = JSON.parse(data);
+    console.log("received: %s", message);
+
+    wss.clients.forEach(function each(client) {
+      if (client.readyState === WebSocket.OPEN) {
+        client.send(JSON.stringify(message));
+      }
+    });
   });
 });
