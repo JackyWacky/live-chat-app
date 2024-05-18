@@ -1,13 +1,15 @@
-import WebSocket, { WebSocketServer } from 'ws';
+import WebSocket, { WebSocketServer } from "ws";
 
 var port = 9090;
 
 var wss = new WebSocketServer({ port });
 
-wss.on('connection', function connection(ws) {
-  ws.on('error', console.error);
+console.log("Server running on port: ", port);
 
-  ws.on('message', function message(data) {
+wss.on("connection", function connection(ws) {
+  ws.on("error", console.error);
+
+  ws.on("message", function message(data) {
     var message = JSON.parse(data);
     console.log("received: %s", message);
 
