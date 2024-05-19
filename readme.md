@@ -6,6 +6,5 @@ IFB102 Mini-project
 
 Clone repo and run
 ```
-npx http-server
-node backend_chat.js
+node server.js
 ```

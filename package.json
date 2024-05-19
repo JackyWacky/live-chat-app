@@ -1,6 +1,7 @@
 {
   "type": "module",
   "dependencies": {
+    "express": "^4.19.2",
     "http-server": "^14.1.1",
     "ws": "^8.17.0"
   }
