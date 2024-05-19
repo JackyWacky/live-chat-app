@@ -8,7 +8,7 @@ websocket.onopen = function (_event) {
 
 // on websocket close
 websocket.onclose = function (_event) {
-  MessageAdd('<h2 class="message blue">You have been disconnected.</h2>');
+  MessageAdd('<h2 class="message red">You have been disconnected.</h2>');
 };
 
 // on websocket error
