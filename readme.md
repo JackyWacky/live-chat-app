@@ -6,5 +6,6 @@ IFB102 Mini-project
 
 Clone repo and run
 ```
+npm i
 node server.js
 ```
