@@ -1,6 +1,5 @@
 # Live Chat App
-IFB102 Mini-project
-
+IFB102 Mini-project that uses websockets for client-server communication
 # Running
 ## From Repo
 Clone repo and run
